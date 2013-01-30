@@ -1,0 +1,75 @@
+%!TEX TS-program = xelatex
+\documentclass[12pt]{letter}
+\usepackage{xeCJK}
+\usepackage{ruby}
+\setCJKmainfont{Hiragino Kaku Gothic ProN}
+\setmainfont{Hoefler Text}
+
+\usepackage{setspace}
+\doublespace
+
+%
+\usepackage[landscape,margin=0.5in]{geometry}
+%%
+\makeatletter
+\newcommand{\defaultrubysep}{-1.7ex}
+\renewcommand{\rubysep}{\defaultrubysep}
+\newcommand{\english}{}
+\renewcommand{\english}{-4.8ex}
+\newlength{\kanji@kana@no@nagasa}
+\newcommand{\eruby}[3]{%
+    \ruby{\textbf{#1}}{#2}\renewcommand{\rubysep}{\english}%
+    \settowidth{\kanji@kana@no@nagasa}{#1}%
+    \hspace*{\dimexpr-\kanji@kana@no@nagasa\relax}%+0.5\@tempdimb
+    \ruby{\phantom{#1}}{#3}\renewcommand{\rubysep}{\defaultrubysep}%
+}
+\makeatother
+%%
+
+\pagestyle{empty}
+\begin{document}
+
+\title{たんぽぽの旅}
+\eruby{田}{た}{rice field}んぼの　\eruby{畦道}{あぜみち}{footpath}に、\eruby{タンポポ}{tanpopo}{dandelion}が　\eruby{咲いていました}{saiteimashita}{to bloom}。
+Tanbo no azemichi, tanpopo saiteimashita.
+\begin{description}
+	\item[さく【咲く】] To bloom
+	\item[たんぼ【田んぼ】] Rice field
+	\item[あぜみち【畦道】] A walkway in the rice field
+	\item[タンポポ] A dandelion
+\end{description}
+On a walkway in the ricefield, a dandelion blooms.
+\newline
+\linebreak[2]
+\eruby{甘い}{あまい}{sweet}\eruby{匂い}{におい}{odor}のする\eruby{真っ}{ま}{emph.}\eruby{黄色な}{きろな}{yellow}\eruby{花}{はな}{flower}です。
+Amai nioi no suru makkirona hana desu.
+\begin{description}
+	\item[あまい【あま】] Sweet
+	\item[あまい【匂い】] Odor
+	\item[まっ【真っ〜〜】] Emphasis modifier
+	\item[きいろな【黄色い】] Yellow
+	\item[はな【花】] Flower
+\end{description}
+It is a really yellow flower that smells sweet.
+\newpage
+\eruby{そこへ}{soko-e}{there}　\eruby{ひらひら}{}{flutter}　と　\eruby{白い}{しろい}{white}　\eruby{チョウチョ}{ch\={o}cho}{butterfly}が　あそびに　きて、「\ruby{タンポポ}{tanpopo}さん、あなたは　\eruby{春}{はる}{spring}の　\eruby{ブローチ}{bur\={o}chi}{brooch}ね。」　といいました。
+Soko-e hirahira to shiroi ch\={o}ch\={o} ga asobi ni kite, "tanpopo-san, anata wa haru no buroochi-ne" to iimashita.
+\begin{description}
+	\item[そこへ] There
+	\item[ひらひら] Flutter
+	\item[しろい【白い】] White
+	\item[ちょうちょ] Butterfly
+	\item[あそびにきる] To come over, to visit
+\end{description}
+A white fluttery butterfly came over, "Mr. Dandelion you are a spring's brooch, aren't you?", it said.
+\newline
+\linebreak[2]
+\eruby{白い}{しろい}{white}　\eruby{チョウ}{ch\={o}}{butterfly}に　そう　\eruby{言}{え}{said}われると、　「\eruby{本当}{ほんとう}{truly}に　そう　見えて。」　と、　タンポポも　うれしく　なりました。\newline
+Shiroi ch\={o} ni s\={o} iwareru to: "Honto no s\={o} miete." to, tanpopo ureshiku narimashita.
+
+\newpage
+%今度は、ヒバリが　あそびに　きて、「タンポポさん、　あなたは　のはらの　おほしさまみたい。」　といいました。
+%\hrule
+%ヒバリに　こう　いわれると、　「まあ、　おほしさまだなんで。」　と　うれしく　なりました。
+%\hrule
+\end{document}
